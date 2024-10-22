@@ -1,0 +1,5 @@
+inputs:
+  phps:
+    url: github:fossar/nix-phps
+  nixpkgs:
+    url: github:cachix/devenv-nixpkgs/rolling
