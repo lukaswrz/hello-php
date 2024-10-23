@@ -5,9 +5,11 @@
 }: let
   appName = "example";
 in {
-  cachix.pull = [ "fossar" ];
-
-  packages = [pkgs.symfony-cli];
+  imports = [
+    ./devenv/cachix.nix
+    ./devenv/env.nix
+    ./devenv/tools.nix
+  ];
 
   languages.php = {
     enable = true;
@@ -60,5 +62,9 @@ in {
     rabbitmq.enable = true;
   };
 
-  env.APP_ENV = "dev";
+  processes.whatever.exec = ''
+    ping google.com
+  '';
+
+  enterShell = "composer install";
 }

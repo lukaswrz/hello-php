@@ -1,0 +1,3 @@
+{
+  env.APP_ENV = "dev";
+}
